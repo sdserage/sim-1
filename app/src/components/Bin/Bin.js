@@ -4,9 +4,24 @@ import logo from '../../images/logo.png';
 import './Bin.css';
 
 export default class Shelf extends Component{
+  constructor(){
+    super();
+    this.state = {
+      shelf: '',
+      binNumber: null
+    }
+  }
+
+  componentWillMount(){
+    this.setState({
+      shelf: this.props.match.params.shelf,
+      binNumber: this.props.match.params.binnumber
+    });
+  }
+
   render(){
-    let shelf = this.props.match.params.shelf;
-    let binNumber = this.props.match.params.binnumber;
+    // let shelf = this.props.match.params.shelf;
+    // let binNumber = this.props.match.params.binnumber;
     return (
       <div className="home">
         <header>
@@ -15,13 +30,13 @@ export default class Shelf extends Component{
               <img className='logo' src={logo} alt="shelfie logo"/>
             </div>
           </Link>
-          <Link to={`/bins/${shelf}`}>
+          <Link to={`/bins/${this.state.shelf}`}>
             <div className='shelf-header'>
-              Shelf {shelf}
+              Shelf {this.state.shelf}
             </div>
           </Link>
           <div className='bin-header'>
-            {/*Will implement a ternary to display 'Add to'*/} {`Bin ${binNumber}`}
+            {/*Will implement a ternary to display 'Add to'*/} {`Bin ${this.state.binNumber}`}
           </div>
         </header>
         <p>Name</p>
