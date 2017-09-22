@@ -12,19 +12,19 @@ var app = express();
 app.use( bodyParser.json() );
 app.use( cors() );
 
-massive( process.env.CONNECTION_STRING ).then( db => app.set('db', db) );
+massive( process.env.CONNECTION_STRING ).then( dbInstance => app.set('db', dbInstance) );
 
 //**Endpoints**
 
 //Get
-app.get('/api/bins/shelf', bin_controller.getAll);
-app.get('/api/bin/shelf', bin_controller.getOne);
+app.get('/api/bins/:shelf', bin_controller.getAll);
+app.get('/api/:id', bin_controller.getOne);
 //Create
-app.put('/api/bins/shelf/:binNum', bin_controller.create);
+app.put('/api/:id/:name/:price', bin_controller.create);
 //Update
-app.put('/api/bins/shelf', bin_controller.update);
+// Removed we only need one update/edit thing app.put('/api/:id/:name/:price', bin_controller.update);
 //Delete
-app.put('/api/bins/shelf/:binNum', bin_controller.delete);
+app.put('/api/:id', bin_controller.delete);
 
 const port = process.env.PORT || 3000;
 app.listen( port, () => {
