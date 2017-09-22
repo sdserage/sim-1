@@ -7,7 +7,6 @@ require('dotenv').config()
 
 //revise below for database connection
 
-// const CONNECTION_STRING = "postgres://zrdvyvzdllbbqw:e6eea9ed508a1468dd5f74428c432ec7713c9e3c7b4013e4ba2a3b61720398b1@ec2-184-73-189-221.compute-1.amazonaws.com:5432/d43nu5mqgi1qoq?ssl=true"
 
 var app = express();
 app.use( bodyParser.json() );
