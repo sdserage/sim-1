@@ -6,6 +6,7 @@ import './Bin.css';
 export default class Shelf extends Component{
   render(){
     let shelf = this.props.match.params.shelf;
+    let binNumber = this.props.match.params.binnumber;
     return (
       <div className="home">
         <header>
@@ -19,15 +20,18 @@ export default class Shelf extends Component{
               Shelf {shelf}
             </div>
           </Link>
+          <div className='bin-header'>
+            {/*Will implement a ternary to display 'Add to'*/} {`Bin ${binNumber}`}
+          </div>
         </header>
         <p>Name</p>
         <input type='text'/>
         <p>Price</p>
         <input type='text'/>
         <div>
-          <button>Edit</button>
-          <button>Delete</button>
-          <button>+ Add to Inventory</button>
+          <button className="default-button">Edit</button>
+          <button className="default-button">Delete</button>
+          <button className="update-button">+ Add to Inventory</button>
         </div>
       </div>
     );

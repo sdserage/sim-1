@@ -15,22 +15,22 @@ export default class Home extends Component{
         <ul>
           <li>
             <Link to="/bins/A">
-              <button>Shelf A</button>
+              <button className="shelf">Shelf A</button>
             </Link>
           </li>
           <li>
             <Link to="/bins/B">
-              <button>Shelf B</button>
+              <button className="shelf">Shelf B</button>
             </Link>
           </li>
           <li>
             <Link to="/bins/C">
-              <button>Shelf C</button>
+              <button className="shelf">Shelf C</button>
             </Link>
           </li>
           <li>
             <Link to="/bins/D">
-              <button>Shelf D</button>
+              <button className="shelf">Shelf D</button>
             </Link>
           </li>
         </ul>

@@ -37,3 +37,9 @@
 .bin-header{
   background-color: #ED6B5A;
 }
+
+ul {
+  list-style-type: none;
+}
+
+/*input,*/ button { border:none; } 
