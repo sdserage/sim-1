@@ -1,13 +1,23 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 import './Shelf.css';
+import logo from '../../images/logo.png';
 
 export default class Shelf extends Component{
   render(){
     let shelf = this.props.match.params.shelf;
     return (
       <div className="home">
-        <header>Shelf Header</header>
+        <header>
+          <Link to="/">
+            <div className='home-header'>
+              <img className='logo' src={logo} alt="shelfie logo"/>
+            </div>
+          </Link>
+          <div className='shelf-header'>
+            Shelf {shelf}
+          </div>
+        </header>
         <ul>
           <li>
             <Link to={`/bins/${shelf}/1`}>

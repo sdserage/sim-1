@@ -1,12 +1,17 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 import './Home.css';
+import logo from '../../images/logo.png'
 
 export default class Home extends Component{
   render(){
     return (
       <div className="home">
-        <header>Home Header</header>
+        <header>
+          <div className='home-header'>
+            <img className='logo' src={logo} alt="shelfie logo"/> SHELFIE
+          </div>
+        </header>
         <ul>
           <li>
             <Link to="/bins/A">
