@@ -19,13 +19,13 @@ massive( process.env.CONNECTION_STRING ).then( dbInstance => app.set('db', dbIns
 
 //Get
 app.get('/api/bins/:shelf', bin_controller.getAll);
-app.get('/api/:id', bin_controller.getOne);
+app.get('/api/:shelf/:binnum', bin_controller.getOne);
 //Create
-app.put('/api/:id/:name/:price', bin_controller.create);
+app.put('/api/:shelf/:binnum', bin_controller.create);
 //Update
 // Removed we only need one update/edit thing app.put('/api/:id/:name/:price', bin_controller.update);
 //Delete
-app.put('/api/:id', bin_controller.delete);
+app.delete('/api/:shelf/:binnum', bin_controller.delete); // delete is contextual, we are deleting the data that the user wants and expects so we should use delete.
 
 const port = process.env.PORT || 3000;
 app.listen( port, () => {
